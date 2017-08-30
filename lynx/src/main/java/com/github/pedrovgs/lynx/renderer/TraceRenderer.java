@@ -57,7 +57,6 @@ class TraceRenderer extends Renderer<Trace> {
 
   @Override protected void setUpView(View rootView) {
     tv_trace = (TextView) rootView.findViewById(R.id.tv_trace);
-    tv_trace.setTypeface(Typeface.MONOSPACE);
     if (lynxConfig.hasTextSizeInPx()) {
       float textSize = lynxConfig.getTextSizeInPx();
       tv_trace.setTextSize(textSize);

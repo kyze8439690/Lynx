@@ -19,9 +19,6 @@
     package="com.github.pedrovgs.lynx">
 
   <application>
-    <activity
-        android:name=".LynxActivity"
-        android:windowSoftInputMode="stateHidden"/>
   </application>
 
 </manifest>

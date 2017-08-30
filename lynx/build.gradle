@@ -29,28 +29,4 @@ dependencies {
   compile 'com.android.support:support-annotations:25.3.1'
   compile 'com.github.pedrovgs:renderers:3.3.0'
   compile 'com.squareup:seismic:1.0.2'
-  testCompile 'org.robolectric:robolectric:3.3.2'
-  testCompile 'junit:junit:4.12'
-  testCompile ('org.mockito:mockito-core:1.10.19') {
-    exclude group: "org.hamcrest"
-  }
-}
-
-task checkstyle(type: Checkstyle) {
-  configFile file('../config/checkstyle/checkstyle.xml')
-  source 'src'
-  include '**/*.java'
-  exclude '**/gen/**'
-
-  classpath = files()
-}
-
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
-
-afterEvaluate { project ->
-  android.libraryVariants.all { variant ->
-    tasks.androidJavadocs.doFirst {
-      classpath += files(variant.javaCompile.classpath.files)
-    }
-  }
 }

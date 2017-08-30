@@ -67,7 +67,7 @@ public class Logcat extends Thread implements Cloneable {
   @Override public void run() {
     super.run();
     try {
-      process = Runtime.getRuntime().exec("logcat -v time");
+      process = Runtime.getRuntime().exec("logcat -v tag");
     } catch (IOException e) {
       Log.e(LOGTAG, "IOException executing logcat command.", e);
     }
